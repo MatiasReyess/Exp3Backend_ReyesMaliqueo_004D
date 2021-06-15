@@ -10,7 +10,7 @@
     {% load static %}
     <link href="{% static 'css/estilos.css' %}" type="text/css" rel="stylesheet">
     <link href="{% static 'css/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     
 
     <!--acciones del navbar-->
@@ -31,11 +31,9 @@
             </a>
             <div class="collapse navbar-collapse" id="opciones">
               <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="index1.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="galeriaImagenes.html">Deportes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="SobreNosotros.html">Sobre nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="Foro.html">Foro</a></li>
-                    <li class="nav-item"><a class="nav-link" href="Registro.html">Registro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'galeria' %}">Deportes</a></li>
+                    
               </ul>      
             </div>
   
@@ -43,18 +41,22 @@
         </header>
         <br>
 
-        <div>
+{% block content %}
+ 
+{% endblock %}
+
+       
             <footer>
               <a class="navbar-brand" href="#">
-                <img src="img/FaceLogo.png" width="50px" height="50px" alt="">
+                <img src="{% static 'img/FaceLogo.png' %}" width="50px" height="50px" alt="">
               </a>
               <a class="navbar-brand" href="#">
-                <img src="img/IgLogo.png" width="50px" height="50px" alt="">
+                <img src="{% static 'img/IgLogo.png' %}" width="50px" height="50px" alt="">
               </a>
               <p>Jesus Maliqueo - Matias Reyes, @Copyright reservados.</p>
       
             </footer>
-          </div>
+
     
 </body>
 </html>

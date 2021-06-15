@@ -132,7 +132,7 @@ section#zonacomen{
 }
 body{
 
-background-color: rgb(217, 255, 237);
+background-color: rgb(154, 226, 193);
 
 }
 .galeria{
@@ -287,5 +287,8 @@ footer{
 .letra{
   color: #ffffff;
   text-shadow: rgba(0, 0, 0, 0.5);
+}
+.fondobody{
+  background-color: #87cefa;
 }
 
