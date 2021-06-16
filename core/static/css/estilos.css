@@ -132,7 +132,7 @@ section#zonacomen{
 }
 body{
 
-background-color: rgb(154, 226, 193);
+background-color: rgb(102, 201, 156);
 
 }
 .galeria{
@@ -197,7 +197,7 @@ footer{
 
 .contenedor{
   width: 100%;
-  display: flex;
+  display: initial;
   justify-content: center;
   align-items: center;
   height: 80vh;
@@ -259,7 +259,7 @@ footer{
 }
 .color {
   background-color: rgb(217, 255, 237);
-  border-color: rgb(217, 255, 237);
+  border-color: rgb(64, 141, 105);
 }
 .diseform{
   text-align: center;
@@ -289,6 +289,6 @@ footer{
   text-shadow: rgba(0, 0, 0, 0.5);
 }
 .fondobody{
-  background-color: #87cefa;
+  background-color: #87faca;
 }
 
