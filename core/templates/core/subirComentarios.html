@@ -1,0 +1,110 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static %}
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function()
+        {
+          $("#comentario").validate({
+                rules: {
+                    id: "required",
+                    nombre:  "required",
+                    email: "required",
+                    titulo: "required",
+                    cuadrotext:"required"
+
+                },//reglas
+                messages : {
+                    id :{
+                        required: 'Ingresa su ID',
+                        text: 'formato no valido'
+                    },
+                    nombre :{
+                        required: 'nesesitas Ingresa tu nombre'
+                    },
+                    email : {
+                        required: 'se requiere el email'
+                    },
+                    titulo :{
+                        required: 'ingrese un titulo para el tema porfavor'
+                    },
+                    cuadrotext: {
+                        required:'ingrese texto porfavor'
+                    }
+                }
+
+            });
+        });
+
+        //eventos dom//
+
+        function tituloMayuscula(){
+            var a=document.getElementById("titulo");
+            a.value = a.value.toUpperCase();
+        }
+        function colorTextArea(a){
+            a.style.background="mistyrose";
+        }
+
+    </script>
+</head>
+<body class="fondo">
+
+    <section id="zonacomen" class="page-section portada">
+        <div class="container">
+            <div class="text-center colortext" ><h2><b>COMENTA SOBRE DEPORTES</b></h2></div>
+            <form method="POST" name="Comentario" id="comentario" action="#">
+		        {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group  colortext">
+                            {{comentario_form.idUser.label}}
+                            {{comentario_form.idUser}} 
+                        </div><br><br>
+                        <div class="form-group colortext">
+                            {{comentario_form.nombreUser.label}}
+                            {{comentario_form.nombreUser}}
+                        </div>
+
+                        <div class="form-group colortext" >
+                            {{comentario_form.titulo.label}}
+                            {{comentario_form.titulo}}
+                        </div><br><br>
+
+                        <div class="form-group colortext">
+                            {{comentario_form.correo.label}}
+                            {{comentario_form.correo}}
+                        </div><br><br>
+
+                        <div class="form-group form-group-textarea colortext">
+                            {{comentario_form.deporte.label}}
+                            {{comentario_form.deporte}}
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group form-group-textarea colortext">
+                            {{comentario_form.texto.label}}
+                            {{comentario_form.texto}}
+                        </div>
+                    </div>
+
+                </div><br><br>
+                <input type="submit"  class="botones" value="enviar" >
+                <input type="reset" class="botones"  value="limpiar">
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
+{% endblock %}

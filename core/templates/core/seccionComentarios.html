@@ -1,0 +1,53 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title></title>
+    
+</head>
+<body class="fondo">
+    <section style="margin-bottom: 300px;">
+        <div class="container">
+            <div class="row">
+                <h2>Comentarios de la comunidad</h2>
+            </div>
+            <div class="container">
+                <table class="table" >
+                    <thead>
+                        <tr>
+                            <th scope="col">ID usuario</th>
+                            <th scope="col">nombre</th>
+                            <th scope="col">tema</th>
+                            <th score="col">texto</th>
+                            <th core="col">deporte</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for co in comentarios%}
+                        <tr>
+                            <td>{{co.idUser}}</th>
+                            <td>{{co.nombreUser}}</th>
+                            <td>{{co.titulo}}</th>
+                            <td style="width: 50%;">{{co.texto}}</th>
+                            <td>{{co.deporte}}</th>
+                            <td><a href="{% url 'modcomen' co.idUser%}"
+                                class="btn btn-primary">Modificar</a></td>
+                            <td><a href="{% url 'delete_comen' co.idUser%}"
+                                class="btn btn-danger">Eliminar</a></td>
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+{% endblock %}
